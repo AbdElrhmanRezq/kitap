@@ -14,7 +14,7 @@ class Kitap extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData().copyWith(scaffoldBackgroundColor: kPrimaryColor),
+      darkTheme: ThemeData().copyWith(scaffoldBackgroundColor: kPrimaryColor),
       home: SplashView(),
     );
   }
