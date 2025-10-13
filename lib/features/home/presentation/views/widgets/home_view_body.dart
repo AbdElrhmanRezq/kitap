@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kitap/core/utils/assets.dart';
 import 'package:kitap/core/utils/styles.dart';
+import 'package:kitap/features/home/presentation/views/widgets/besr_seller_item.dart';
 import 'package:kitap/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:kitap/features/home/presentation/views/widgets/featured_books_list.dart';
 
@@ -19,6 +21,9 @@ class HomeViewBody extends StatelessWidget {
           FeaturedBooksList(height: height),
           SizedBox(height: height * 0.04),
           Text("Best seller", style: Styles.titleMedium),
+          SizedBox(height: height * 0.01),
+
+          BestSellerItem(),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kitap/consts.dart';
 import 'package:kitap/features/splash/presentation/views/splash_view.dart';
 
@@ -19,6 +20,7 @@ class Kitap extends StatelessWidget {
         iconButtonTheme: IconButtonThemeData(
           style: IconButton.styleFrom(foregroundColor: Colors.white),
         ),
+        textTheme: GoogleFonts.montserratTextTheme(),
       ),
       home: SplashView(),
     );
