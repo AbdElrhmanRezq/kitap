@@ -20,7 +20,9 @@ class Kitap extends StatelessWidget {
         iconButtonTheme: IconButtonThemeData(
           style: IconButton.styleFrom(foregroundColor: Colors.white),
         ),
-        textTheme: GoogleFonts.montserratTextTheme(),
+        textTheme: GoogleFonts.montserratTextTheme().apply(
+          bodyColor: Colors.white,
+        ),
       ),
       home: SplashView(),
     );
