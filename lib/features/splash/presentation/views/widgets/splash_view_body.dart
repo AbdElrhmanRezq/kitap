@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/utils.dart';
-import 'package:kitap/consts.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kitap/core/utils/assets.dart';
-import 'package:kitap/features/home/presentation/views/home_view.dart';
 import 'package:kitap/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -61,11 +58,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void goToHomeView() {
     Future.delayed(Duration(seconds: 2), () {
-      Get.to(
-        () => HomeView(),
-        transition: Transition.fade,
-        duration: kTransitionDuration,
-      );
+      // Get.to(
+      //   () => HomeView(),
+      //   transition: Transition.fade,
+      //   duration: kTransitionDuration,
+      // );
+      GoRouter.of(context).pushReplacement('/homeView');
     });
   }
 }

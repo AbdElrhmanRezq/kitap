@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kitap/consts.dart';
+import 'package:kitap/core/utils/app_router.dart';
 import 'package:kitap/features/splash/presentation/views/splash_view.dart';
 
 void main(List<String> args) {
@@ -13,7 +13,8 @@ class Kitap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData().copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
@@ -24,7 +25,6 @@ class Kitap extends StatelessWidget {
           bodyColor: Colors.white,
         ),
       ),
-      home: SplashView(),
     );
   }
 }
