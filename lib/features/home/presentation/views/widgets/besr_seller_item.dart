@@ -11,7 +11,7 @@ class BestSellerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       height: 150,
       child: Row(
         children: [
