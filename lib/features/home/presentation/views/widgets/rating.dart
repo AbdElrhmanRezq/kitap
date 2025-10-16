@@ -11,7 +11,7 @@ class Rating extends StatelessWidget {
       children: [
         Icon(Icons.star_rate_rounded, color: Colors.amber),
         SizedBox(width: 6),
-        Text("4.8", style: Styles.textStyle18),
+        Text("4.8 ", style: Styles.textStyle18),
         SizedBox(width: 3),
         Text("(246)", style: Styles.textStyle16.copyWith(color: Colors.grey)),
       ],

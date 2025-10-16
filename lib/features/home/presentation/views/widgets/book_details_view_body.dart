@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kitap/core/utils/styles.dart';
-
 import 'package:kitap/features/home/presentation/views/widgets/book_details_app_bar.dart';
 import 'package:kitap/features/home/presentation/views/widgets/book_image.dart';
+import 'package:kitap/features/home/presentation/views/widgets/book_options.dart';
 import 'package:kitap/features/home/presentation/views/widgets/rating.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -28,10 +28,16 @@ class BookDetailsViewBody extends StatelessWidget {
             const SizedBox(height: 2),
             Text(
               'Gustaf leobon',
-              style: Styles.textStyle20.copyWith(color: Colors.grey),
+              style: Styles.textStyle20.copyWith(
+                color: Colors.grey,
+                fontStyle: FontStyle.italic,
+              ),
             ),
-            const SizedBox(height: 2),
+            const SizedBox(height: 10),
             Rating(),
+            const SizedBox(height: 30),
+
+            BookOptions(),
           ],
         ),
       ),
