@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kitap/core/utils/assets.dart';
+import 'package:kitap/features/home/presentation/views/widgets/book_image.dart';
 
 class FeaturedBooksList extends StatelessWidget {
   const FeaturedBooksList({super.key, required this.height});
@@ -14,18 +15,7 @@ class FeaturedBooksList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: AspectRatio(
-            aspectRatio: 3 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(AssetsData.bookCover),
-                ),
-              ),
-            ),
-          ),
+          child: CustomBookImage(),
         ),
       ),
     );

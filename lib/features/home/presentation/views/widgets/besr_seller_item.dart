@@ -42,7 +42,7 @@ class BestSellerItem extends StatelessWidget {
                   SizedBox(
                     width: width * 0.5,
                     child: Text(
-                      "The civilization of arabs ----------------- aa",
+                      "The civilization of arabs",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle20.copyWith(
