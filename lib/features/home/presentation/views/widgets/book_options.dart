@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kitap/core/utils/widgets.dart';
+import 'package:kitap/core/widgets/custom_button.dart';
 
 class BookOptions extends StatelessWidget {
   const BookOptions({super.key});

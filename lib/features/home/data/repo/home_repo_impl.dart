@@ -37,6 +37,7 @@ class HomeRepoImpl implements HomeRepo {
       List<BookModel> books = [];
       for (var book in data['items']) {
         books.add(BookModel.fromJson(book));
+        print(book);
       }
       return right(books);
     } catch (e) {

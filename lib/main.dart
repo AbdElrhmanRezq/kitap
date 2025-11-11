@@ -7,9 +7,9 @@ import 'package:kitap/core/utils/service_locator.dart';
 import 'package:kitap/features/home/data/repo/home_repo_impl.dart';
 import 'package:kitap/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:kitap/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
-import 'package:kitap/features/splash/presentation/views/splash_view.dart';
 
 void main(List<String> args) {
+  setup();
   runApp(Kitap());
 }
 
@@ -21,10 +21,13 @@ class Kitap extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) =>
+              FeaturedBooksCubit(getIt.get<HomeRepoImpl>())
+                ..fetchFeaturedBooks(),
         ),
         BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) =>
+              NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),
       ],
       child: MaterialApp.router(
