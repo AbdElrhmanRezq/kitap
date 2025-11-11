@@ -4,10 +4,13 @@ import 'package:kitap/consts.dart';
 import 'package:kitap/core/utils/app_router.dart';
 import 'package:kitap/core/utils/assets.dart';
 import 'package:kitap/core/utils/styles.dart';
+import 'package:kitap/features/home/data/model/book_model/book_model.dart';
+import 'package:kitap/features/home/presentation/views/widgets/book_image.dart';
 import 'package:kitap/features/home/presentation/views/widgets/rating.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+  final BookModel book;
+  const BestSellerItem({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +24,8 @@ class BestSellerItem extends StatelessWidget {
         height: 150,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 3 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.bookCover),
-                  ),
-                ),
-              ),
+            CustomBookImage(
+              imageUrl: book.volumeInfo.imageLinks?.thumbnail as String,
             ),
             const SizedBox(width: 30),
             Expanded(
@@ -42,7 +36,7 @@ class BestSellerItem extends StatelessWidget {
                   SizedBox(
                     width: width * 0.5,
                     child: Text(
-                      "The civilization of arabs",
+                      book.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle20.copyWith(
@@ -54,7 +48,7 @@ class BestSellerItem extends StatelessWidget {
                   const SizedBox(height: 3),
 
                   Text(
-                    "Rudyard Kipling",
+                    book.volumeInfo.authors?.first ?? "Unknown Author",
                     style: Styles.textStyle14.copyWith(color: Colors.grey),
                   ),
                   const SizedBox(height: 3),
@@ -63,12 +57,15 @@ class BestSellerItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "19.99 \$",
+                        "Free",
                         style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Rating(),
+                      Rating(
+                        rating: book.volumeInfo.averageRating!.toDouble(),
+                        count: book.volumeInfo.ratingsCount ?? 0,
+                      ),
                     ],
                   ),
                 ],

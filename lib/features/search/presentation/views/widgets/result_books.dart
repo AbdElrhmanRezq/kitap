@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kitap/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:kitap/features/home/presentation/views/widgets/besr_seller_item.dart';
 
 class ResultBooks extends StatelessWidget {
@@ -7,12 +9,22 @@ class ResultBooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-        itemCount: 6,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(bottom: 20),
-          child: BestSellerItem(),
-        ),
+      child: BlocBuilder<NewestBooksCubit, NewestBooksState>(
+        builder: (context, state) {
+          if (state is NewestBooksSuccess) {
+            return ListView.builder(
+              itemCount: state.books.length,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: BestSellerItem(book: state.books[index]),
+              ),
+            );
+          } else if (state is NewestBooksFailure) {
+            return Center(child: Text(state.errMessage));
+          } else {
+            return Center(child: CircularProgressIndicator());
+          }
+        },
       ),
     );
   }
