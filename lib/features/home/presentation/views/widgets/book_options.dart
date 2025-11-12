@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kitap/core/utils/functions/launch_url.dart';
 import 'package:kitap/core/widgets/custom_button.dart';
 import 'package:kitap/features/home/data/model/book_model/book_model.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -26,10 +27,7 @@ class BookOptions extends StatelessWidget {
             text: "Preview",
             backgroundColor: Color(0xffEF8262),
             onPressed: () async {
-              final url = book.volumeInfo.previewLink;
-              if (await canLaunchUrl(Uri.parse(url!))) {
-                await launchUrl(Uri.parse(url));
-              }
+              await launchCustomUrl(context, book.volumeInfo.previewLink);
             },
             textColor: Colors.white,
             borderRadius: BorderRadius.only(
