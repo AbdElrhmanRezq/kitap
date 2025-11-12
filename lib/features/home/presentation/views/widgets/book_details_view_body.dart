@@ -55,7 +55,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
 
-                  BookOptions(),
+                  BookOptions(book: book),
 
                   Expanded(child: SizedBox(height: 50)),
                   Align(

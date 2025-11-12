@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kitap/core/widgets/custom_button.dart';
+import 'package:kitap/features/home/data/model/book_model/book_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BookOptions extends StatelessWidget {
-  const BookOptions({super.key});
+  final BookModel book;
+  const BookOptions({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,7 @@ class BookOptions extends StatelessWidget {
       child: Row(
         children: [
           CustomButton(
-            text: "19.99 \$",
+            text: "Free",
             backgroundColor: Colors.white,
             textColor: Colors.black,
             borderRadius: BorderRadius.only(
@@ -20,8 +23,14 @@ class BookOptions extends StatelessWidget {
             ),
           ),
           CustomButton(
-            text: "Free preview",
+            text: "Preview",
             backgroundColor: Color(0xffEF8262),
+            onPressed: () async {
+              final url = book.volumeInfo.previewLink;
+              if (await canLaunchUrl(Uri.parse(url!))) {
+                await launchUrl(Uri.parse(url));
+              }
+            },
             textColor: Colors.white,
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(12),
