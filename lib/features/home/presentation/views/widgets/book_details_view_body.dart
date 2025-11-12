@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kitap/core/utils/styles.dart';
+import 'package:kitap/features/home/data/model/book_model/book_model.dart';
 import 'package:kitap/features/home/presentation/views/widgets/book_details_app_bar.dart';
 import 'package:kitap/features/home/presentation/views/widgets/book_image.dart';
 import 'package:kitap/features/home/presentation/views/widgets/book_options.dart';
@@ -7,7 +8,8 @@ import 'package:kitap/features/home/presentation/views/widgets/rating.dart';
 import 'package:kitap/features/home/presentation/views/widgets/similar_books_list.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  final BookModel book;
+  const BookDetailsViewBody({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -24,24 +26,33 @@ class BookDetailsViewBody extends StatelessWidget {
                 children: [
                   BookDetailsAppBar(),
                   SizedBox(height: 20),
-                  SizedBox(width: width * 0.5, child: CustomBookImage()),
+                  SizedBox(
+                    width: width * 0.5,
+                    child: CustomBookImage(
+                      imageUrl: book.volumeInfo.imageLinks?.thumbnail as String,
+                    ),
+                  ),
                   const SizedBox(height: 30),
                   Text(
-                    'The civilization of arabs',
+                    book.volumeInfo.title!,
                     style: Styles.textStyle30.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    'Gustaf leobon',
+                    book.volumeInfo.authors?.first ?? "Unknown Author",
                     style: Styles.textStyle20.copyWith(
                       color: Colors.grey,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Rating(rating: 4, count: 246),
+                  Rating(
+                    rating: book.volumeInfo.averageRating?.toDouble() ?? 0,
+                    count: book.volumeInfo.ratingsCount ?? 0,
+                  ),
                   const SizedBox(height: 30),
 
                   BookOptions(),

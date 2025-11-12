@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:kitap/core/utils/app_router.dart';
 import 'package:kitap/core/utils/assets.dart';
 import 'package:kitap/core/widgets/custom_error_widget.dart';
 import 'package:kitap/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
@@ -23,8 +25,17 @@ class FeaturedBooksList extends StatelessWidget {
               itemCount: state.books.length,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.only(right: 10),
-                child: CustomBookImage(
-                  imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail,
+                child: GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(
+                      AppRouter.kBookDetailsViewRoute,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: CustomBookImage(
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks!.thumbnail,
+                  ),
                 ),
               ),
             ),
