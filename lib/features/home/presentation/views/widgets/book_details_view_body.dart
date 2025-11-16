@@ -24,7 +24,7 @@ class BookDetailsViewBody extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
-                  BookDetailsAppBar(),
+                  BookDetailsAppBar(book: book),
                   SizedBox(height: 20),
                   SizedBox(
                     width: width * 0.5,

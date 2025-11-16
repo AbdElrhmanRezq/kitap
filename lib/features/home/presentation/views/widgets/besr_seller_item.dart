@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kitap/consts.dart';
 import 'package:kitap/core/utils/app_router.dart';
-import 'package:kitap/core/utils/assets.dart';
 import 'package:kitap/core/utils/styles.dart';
 import 'package:kitap/features/home/data/model/book_model/book_model.dart';
 import 'package:kitap/features/home/presentation/views/widgets/book_image.dart';
