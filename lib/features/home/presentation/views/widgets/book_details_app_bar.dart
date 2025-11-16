@@ -14,9 +14,9 @@ class BookDetailsAppBar extends StatelessWidget {
           onPressed: () {
             GoRouter.of(context).pop();
           },
-          icon: Icon(Icons.close),
+          icon: Icon(Icons.arrow_back_ios_new),
         ),
-        IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.cartShopping)),
+        IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.download)),
       ],
     );
   }

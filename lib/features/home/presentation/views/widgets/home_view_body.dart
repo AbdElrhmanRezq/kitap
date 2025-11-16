@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kitap/core/utils/assets.dart';
 import 'package:kitap/core/utils/styles.dart';
-import 'package:kitap/features/home/presentation/views/widgets/besr_seller_item.dart';
 import 'package:kitap/features/home/presentation/views/widgets/best_seller_list.dart';
 import 'package:kitap/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:kitap/features/home/presentation/views/widgets/featured_books_list.dart';
@@ -25,12 +23,12 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: height * 0.02),
                 FeaturedBooksList(height: height),
                 SizedBox(height: height * 0.04),
-                Text("Best seller", style: Styles.textStyle20),
+                Text("Newest Books", style: Styles.textStyle20),
                 SizedBox(height: height * 0.01),
               ],
             ),
           ),
-          SliverFillRemaining(child: BestSellerList()),
+          SliverList(delegate: SliverChildListDelegate([BestSellerList()])),
         ],
       ),
     );
