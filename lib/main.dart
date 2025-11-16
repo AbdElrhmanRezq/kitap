@@ -7,6 +7,8 @@ import 'package:kitap/core/utils/service_locator.dart';
 import 'package:kitap/features/home/data/repo/home_repo_impl.dart';
 import 'package:kitap/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:kitap/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:kitap/features/search/data/repos/search_repo_impl.dart';
+import 'package:kitap/features/search/presentation/manager/search_cubit/search_cubit.dart';
 
 void main(List<String> args) {
   setup();
@@ -28,6 +30,13 @@ class Kitap extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
+        ),
+        BlocProvider(
+          create: (context) => SearchCubit(getIt.get<SearchRepoImpl>()),
         ),
       ],
       child: MaterialApp.router(

@@ -7,8 +7,6 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
 
