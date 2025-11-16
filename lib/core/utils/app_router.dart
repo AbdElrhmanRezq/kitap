@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kitap/core/utils/service_locator.dart';
 import 'package:kitap/features/home/data/model/book_model/book_model.dart';
-import 'package:kitap/features/home/data/repo/home_repo.dart';
 import 'package:kitap/features/home/data/repo/home_repo_impl.dart';
 import 'package:kitap/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:kitap/features/home/presentation/views/book_details_view.dart';

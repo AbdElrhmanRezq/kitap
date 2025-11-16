@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:kitap/core/errors/failures.dart';
 import 'package:kitap/core/utils/api_service.dart';
 import 'package:kitap/features/home/data/model/book_model/book_model.dart';
-import 'package:kitap/features/home/data/repo/home_repo.dart';
 import 'package:kitap/features/search/data/repos/search_repo.dart';
 
 class SearchRepoImpl implements SearchRepo {

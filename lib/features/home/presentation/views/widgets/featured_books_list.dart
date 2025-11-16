@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kitap/core/utils/app_router.dart';
-import 'package:kitap/core/utils/assets.dart';
 import 'package:kitap/core/widgets/custom_error_widget.dart';
 import 'package:kitap/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:kitap/features/home/presentation/views/widgets/book_image.dart';

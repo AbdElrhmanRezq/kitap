@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kitap/core/utils/functions/launch_url.dart';
 import 'package:kitap/features/home/data/model/book_model/book_model.dart';
 
 class BookDetailsAppBar extends StatelessWidget {
