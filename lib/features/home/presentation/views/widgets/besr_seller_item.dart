@@ -50,7 +50,7 @@ class BestSellerItem extends StatelessWidget {
                   Text(
                     book.volumeInfo.authors?.first ?? "Unknown Author",
                     style: Styles.textStyle14.copyWith(color: Colors.grey),
-                    maxLines: 2,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 3),
