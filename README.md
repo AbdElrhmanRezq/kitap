@@ -1,6 +1,4 @@
 # Kitap
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/AbdElrhmanRezq/kitap)
-
 Kitap is a Flutter application for discovering and browsing a vast library of free e-books. Leveraging the Google Books API, the app provides a clean and intuitive interface for users to find their next read. Built with a focus on clean architecture and modern development practices, Kitap offers a seamless and responsive user experience.
 
 ## Features
