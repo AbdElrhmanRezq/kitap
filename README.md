@@ -1,6 +1,14 @@
 # Kitap
 Kitap is a Flutter application for discovering and browsing a vast library of free e-books. Leveraging the Google Books API, the app provides a clean and intuitive interface for users to find their next read. Built with a focus on clean architecture and modern development practices, Kitap offers a seamless and responsive user experience.
 
+## Screenshots
+
+<p align="center">
+  <img src="assets/images/scr1.jpg" alt="Screenshot 1" width="250"/>
+  <img src="assets/images/scr2.jpg" alt="Screenshot 2" width="250"/>
+  <img src="assets/images/scr3.jpg" alt="Screenshot 3" width="250"/>
+</p>
+
 ## Features
 
 *   **Discover Books:** Browse curated lists of featured books and a real-time feed of the newest books available.
